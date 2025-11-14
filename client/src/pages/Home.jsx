@@ -12,7 +12,7 @@ export default function Home() {
 
   const fetchFeatured = async () => {
     try {
-      const res = await API.get("/recipes");
+      const res = await API.get(import.meta.env.VITE_API_URL +'/recipes');
       setFeatured(res.data.slice(0, 4));
     } catch (err) {
       console.error(err);

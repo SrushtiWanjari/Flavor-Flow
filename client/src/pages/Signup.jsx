@@ -12,7 +12,7 @@ export default function Signup() {
   const submit = async (e) => {
     e.preventDefault();
     try {
-      const res = await API.post("/auth/register", { name, email, password });
+      const res = await API.post(import.meta.env.VITE_API_URL +'/auth/register', { name, email, password });
       localStorage.setItem("ff_token", res.data.token);
       localStorage.setItem("ff_name", res.data.user.name);
       toast.success("Account created");
