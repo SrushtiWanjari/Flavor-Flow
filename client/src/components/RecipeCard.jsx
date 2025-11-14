@@ -8,7 +8,7 @@ export default function RecipeCard({ recipe, onSaved, onDeleted }) {
   const handleSave = async () => {
     try {
       setToken(token);
-      const res = await API.post(`/recipes/${recipe._id}/save`);
+      const res = await API.post(import.meta.env.VITE_API_URL + '/recipes/${recipe._id}/save');
       toast.success("Recipe saved / unsaved successfully!");
       if (onSaved) onSaved(res.data.favorites);
     } catch (err) {
@@ -21,7 +21,7 @@ export default function RecipeCard({ recipe, onSaved, onDeleted }) {
       return;
     try {
       setToken(token);
-      await API.delete(`/recipes/${recipe._id}`);
+      await API.delete(import.meta.env.VITE_API_URL +'/recipes/${recipe._id}');
       toast.success("Recipe deleted successfully!");
       if (onDeleted) onDeleted(recipe._id); // callback to update UI
     } catch (err) {
