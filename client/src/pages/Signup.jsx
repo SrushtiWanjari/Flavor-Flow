@@ -16,7 +16,7 @@ export default function Signup() {
       localStorage.setItem("ff_token", res.data.token);
       localStorage.setItem("ff_name", res.data.user.name);
       toast.success("Account created");
-      navigate("/");
+      navigate("/login");
     } catch (err) {
       toast.error(err?.response?.data?.message || "Signup failed");
     }
