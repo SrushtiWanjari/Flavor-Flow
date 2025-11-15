@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const API = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'https://flavor-flow-api-i407.onrender.com'
+  baseURL: import.meta.env.VITE_API_URL || 'https://flavor-flow-api-i407.onrender.com/api'
 })
 
 export const setToken = token => {
