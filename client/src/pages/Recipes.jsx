@@ -11,7 +11,7 @@ export default function Recipes(){
 
   const fetchAll = async () => {
     try {
-      const res = await API.get(import.meta.env.VITE_API_URL +'/recipes')
+      const res = await API.get("/recipes")
       setRecipes(res.data)
     } catch (err) { toast.error('Could not fetch recipes') }
   }
@@ -19,7 +19,7 @@ export default function Recipes(){
   const search = async (e) => {
     e.preventDefault()
     try {
-      const res = await API.get(import.meta.env.VITE_API_URL +'/recipes', { params: { q } })
+      const res = await API.get("/recipes", { params: { q } })
       setRecipes(res.data)
     } catch (err) { toast.error('Search failed') }
   }

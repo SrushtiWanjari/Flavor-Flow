@@ -11,7 +11,7 @@ export default function Login(){
   const submit = async (e) => {
     e.preventDefault()
     try {
-      const res = await API.post(import.meta.env.VITE_API_URL + '/auth/login', { email, password })
+      const res = await API.post("/auth/login", { email, password })
       localStorage.setItem('ff_token', res.data.token)
       localStorage.setItem('ff_name', res.data.user.name)
       toast.success('Welcome back!')

@@ -17,10 +17,10 @@ export default function Profile() {
       setToken(token);
 
       try {
-        const userRes = await API.get(import.meta.env.VITE_API_URL +'/auth/me');
+        const userRes = await API.get("/auth/me");
         setUser(userRes.data);
 
-        const recipeRes = await API.get( import.meta.env.VITE_API_URL +'/recipes/saved');
+        const recipeRes = await API.get("/recipes/saved");
         setFavorites(recipeRes.data);
       } catch (err) {
         console.error(err);

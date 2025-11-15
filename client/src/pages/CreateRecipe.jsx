@@ -38,7 +38,7 @@ export default function CreateRecipe() {
         coverImage: image,
         tags: [],
       };
-      await API.post(import.meta.env.VITE_API_URL +'/recipes', payload);
+      await API.post("/recipes", payload);
       toast.success("Recipe created");
       navigate("/recipes");
     } catch (err) {
